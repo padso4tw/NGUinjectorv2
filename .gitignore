@@ -351,3 +351,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Game assemblies are referenced from the NGU IDLE install (see NGUManaged in the csproj), never committed
+Assembly-CSharp*.dll
+UnityEngine*.dll

@@ -1,10 +1,55 @@
-# NGUInjector
+# NGUInjector v2
 
-NGUInjector is an automation platform for the steam version of NGU Idle.
+NGUInjector is an automation platform for the steam version of NGU Idle. This version adds a **built-in progression guide** that tells you what to do next and can switch allocation profiles for you as you progress.
+
+## This is a fork
+
+All the automation is the work of the original authors. This repository continues their code:
+
+- [rvazarkar/NGUInjector](https://github.com/rvazarkar/NGUInjector) – the original project by Rohan Vazarkar
+- [benanderson1/NGUInjector-Continued](https://github.com/benanderson1/NGUInjector-Continued) – continued version (cooking, consumables, ...)
+- [tomerpeleg-pub/NGUInjector](https://github.com/tomerpeleg-pub/NGUInjector) – card sorting, wish blacklist, boost priority; this repo is based on it, history included
+
+Contributors of those projects (Altizar, Ingwar, Thure Christensen, Karol Lassak and others) are credited in the git history. Licensed under Apache 2.0 like the original, see [LICENSE](LICENSE).
+
+The progression guide follows the community walkthrough [NGU Idle Guide by sayolove](https://sayolove.github.io/ngu-guide/en/intro/). The goals in the overlay are short paraphrases with a link to the matching chapter, read the guide itself for the details. This project is not affiliated with the guide authors or with 4G.
+
+## Progression Guide
+
+After injecting, the overlay in the upper left shows your current guide phase and its goal, e.g.
+
+```
+Guide - Ch1: HSB -> Titan 1 (2/11)
+1h rebirths. Farm the HSB set, climb ITOPOD for first-time PP, kill T1 (GRB) manually at ~1350 P/T.
+```
+
+The phase is detected from your save (highest boss in normal/evil/sadistic, titan kills), so it also works for existing accounts. Every phase change is written to `inject.log` together with the link to the guide chapter.
+
+Two kinds of files are created on first inject (existing files are never overwritten):
+
+- **guide.json** in the NGUInjector desktop folder – the phases. Edit it freely, it is reloaded automatically.
+  - `"Enabled": false` hides the guide.
+  - `"AutoSwitchProfiles": true` makes the injector load each phase's `Profile` automatically (only while automation is active). Off by default, so nothing changes until you opt in.
+  - `"Until"` conditions are `field>=number` on the game's character, e.g. `highestBoss>=58`, `highestHardBoss>=125` (evil), `highestSadisticBoss>=1`, `adventure.titan4Kills>=1`, `adventure.titan6V2Kills>=1`. A phase is done when all of its conditions are true. Unknown fields are reported in `inject.log`.
+  - Leave `"Profile": ""` for phases you want to play with your own profiles (challenge blocks, long rebirths, late game).
+  - Delete the file to get the default back on the next inject.
+- **profiles/guide-30m.json, guide-1h.json, guide-1h-tm.json, guide-24h.json, guide-evil-24h.json** – starter allocation profiles following the guide's rebirth schedules (30 min, 1 h, 24 h with TM/AT/NGU phases, evil 24 h with the last hour in evil NGUs). They contain no gear, add your own gear IDs (F5 dumps your equipped gear to `inject.log`).
 
 # Instructions
 
-Releases can be found in the releases section of the github page [here](https://github.com/benanderson1/NGUInjector-Continued/releases/). Do not download the source code archive, instead download the zip file with the release version in the name (dist_3.6.3.zip for example). Extract the downloaded archive to a directory of your choice. To start automation, run inject.bat in the extracted folder when NGU Idle is open. DO NOT RUN AS ADMINISTRATOR.
+Releases can be found in the [releases section](https://github.com/padso4tw/NGUinjectorv2/releases). Do not download the source code archive, instead download the release zip. Extract the downloaded archive to a directory of your choice. To start automation, run inject.bat in the extracted folder when NGU Idle is open. DO NOT RUN AS ADMINISTRATOR.
+
+## Building from source
+
+Open `NGUInjector.sln` in Visual Studio (2019 or newer, .NET Framework 4 targeting pack). The game assemblies are referenced from your NGU IDLE install and are not part of this repository. If the game is not in the default Steam folder, set the path when building:
+
+```
+msbuild NGUInjector.sln /p:Configuration=Release /p:NGUManaged="D:\SteamLibrary\steamapps\common\NGU IDLE\NGUIdle_Data\Managed"
+```
+
+The release zip is `inject.bat` plus an `injector` folder containing `NGUInjector.dll`, `smi.exe` and `SharpMonoInjector.dll` (the last two are in `NGUInjector/inject`).
+
+The guide logic has a standalone self-check that runs without the game: `powershell Tests/run.ps1` (needs the .NET SDK, or pass `-Csc path\to\csc.dll`).
 
 You'll know the injection has worked if you see the following in the upper left portion of NGU.
 
