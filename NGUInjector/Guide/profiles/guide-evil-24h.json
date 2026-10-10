@@ -1,0 +1,30 @@
+{
+  "Breakpoints": {
+    "Comment": "Guide Ch5 (Evil): 24 hour rebirths. 0:00-0:30 Time Machine, 0:30-3:00 best augment (magic into blood rituals, blood digger 10), 3:00-23:00 normal NGUs + AT, 23:00-24:00 evil NGUs (Augments, magic Ygg/EXP). Add an hour of evil NGUs per T7 version by moving the 23h breakpoints earlier. Add your own gear IDs per phase.",
+    "Energy": [
+      { "Time": 0, "Priorities": ["CAPALLBT", "CAPTM"] },
+      { "Time": { "m": 30 }, "Priorities": ["CAPALLBT", "CAPBESTAUG"] },
+      { "Time": { "h": 3 }, "Priorities": ["CAPALLBT", "ALLNGU", "AT-1:40"] },
+      { "Time": { "h": 23 }, "Priorities": ["CAPALLBT", "NGU-0"] }
+    ],
+    "Magic": [
+      { "Time": 0, "Priorities": ["CAPTM"] },
+      { "Time": { "m": 30 }, "Priorities": ["BR"] },
+      { "Time": { "h": 3 }, "Priorities": ["NGU-0", "NGU-1"] }
+    ],
+    "NGUDiff": [
+      { "Time": 0, "Diff": 0 },
+      { "Time": { "h": 23 }, "Diff": 1 }
+    ],
+    "Diggers": [
+      { "Time": { "m": 30 }, "List": [10] },
+      { "Time": { "h": 3 }, "List": [4] }
+    ],
+    "Gear": [
+      { "Time": 0, "ID": [], "Comment": "Time Machine" },
+      { "Time": { "m": 30 }, "ID": [], "Comment": "Augments" },
+      { "Time": { "h": 3 }, "ID": [], "Comment": "NGU + AT" }
+    ],
+    "RebirthTime": 86400
+  }
+}

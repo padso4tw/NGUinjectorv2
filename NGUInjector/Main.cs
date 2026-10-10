@@ -406,6 +406,7 @@ namespace NGUInjector
                 LogAllocation("Started Allocation Writer");
 
                 ZoneStatHelper.CreateOverrides(_dir);
+                Guide.Init(_dir, _profilesDir);
 
                 settingsForm.UpdateFromSettings(Settings);
                 settingsForm.Show();
@@ -855,6 +856,8 @@ namespace NGUInjector
         {
             try
             {
+                Guide.Update(Settings.GlobalEnabled);
+
                 if (!Settings.GlobalEnabled)
                 {
                     _timeLeft = 10f;
@@ -1314,6 +1317,8 @@ namespace NGUInjector
             GUI.Label(new Rect(10, 0, 200, 40), $"Automation - {(Settings.GlobalEnabled ? "Active" : "Inactive")}");
             GUI.Label(new Rect(10, 10, 200, 40), $"Next Loop - {_timeLeft:00.0}s");
             GUI.Label(new Rect(10, 20, 200, 40), $"Profile - {Settings.AllocationFile}");
+            GUI.Label(new Rect(10, 30, 800, 40), Guide.OverlayTitle);
+            GUI.Label(new Rect(10, 40, 800, 40), Guide.OverlayGoal);
         }
 
         public void MonitorLog()

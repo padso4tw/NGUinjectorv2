@@ -1,0 +1,24 @@
+{
+  "Breakpoints": {
+    "Comment": "Guide Ch3/Ch4 (T4 -> Evil): 24 hour rebirths for beards. 1h Time Machine, 1h Advanced Training, then split energy between NGU Adventure (NGU-4) and Drop Chance (NGU-6); magic into NGU Yggdrasil (NGU-0). Energy NGU digger (4) during the NGU phase. Add your own gear IDs per phase (TM / AT / NGU).",
+    "Energy": [
+      { "Time": 0, "Priorities": ["CAPALLBT", "CAPTM", "BESTAUG"] },
+      { "Time": { "h": 1 }, "Priorities": ["CAPALLBT", "CAPALLAT", "BESTAUG"] },
+      { "Time": { "h": 2 }, "Priorities": ["CAPALLBT", "NGU-4", "NGU-6"] }
+    ],
+    "Magic": [
+      { "Time": 0, "Priorities": ["CAPTM", "BR"] },
+      { "Time": { "h": 1 }, "Priorities": ["BR", "NGU-0"] },
+      { "Time": { "h": 2 }, "Priorities": ["NGU-0"] }
+    ],
+    "Diggers": [
+      { "Time": { "h": 2 }, "List": [4] }
+    ],
+    "Gear": [
+      { "Time": 0, "ID": [], "Comment": "Time Machine" },
+      { "Time": { "h": 1 }, "ID": [], "Comment": "Advanced Training" },
+      { "Time": { "h": 2 }, "ID": [], "Comment": "Energy NGU" }
+    ],
+    "RebirthTime": 86400
+  }
+}

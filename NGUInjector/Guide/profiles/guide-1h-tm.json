@@ -1,0 +1,17 @@
+{
+  "Breakpoints": {
+    "Comment": "Guide Ch2 (T1 -> boss 100): 1 hour rebirths, Time Machine early in the run for gold after the T1 kill, rest into the best augment (BESTAUG picks augment/upgrade pairs). Magic: TM gold multiplier, then rituals and NGU Yggdrasil. Add your own gear IDs.",
+    "Energy": [
+      { "Time": 0, "Priorities": ["CAPALLBT", "CAPTM", "BESTAUG"] },
+      { "Time": { "m": 20 }, "Priorities": ["CAPALLBT", "CAPBESTAUG"] }
+    ],
+    "Magic": [
+      { "Time": 0, "Priorities": ["CAPTM", "BR"] },
+      { "Time": { "m": 20 }, "Priorities": ["BR", "NGU-0"] }
+    ],
+    "Gear": [
+      { "Time": 0, "ID": [] }
+    ],
+    "RebirthTime": 3600
+  }
+}

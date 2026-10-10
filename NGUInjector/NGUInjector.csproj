@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>false</Deterministic>
     <TargetFrameworkProfile />
+    <NGUManaged Condition=" '$(NGUManaged)' == '' ">C:\Program Files (x86)\Steam\steamapps\common\NGU IDLE\NGUIdle_Data\Managed</NGUManaged>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -36,7 +37,7 @@
   <ItemGroup>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\steam\steamapps\common\NGU IDLE\NGUIdle_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>$(NGUManaged)\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -46,22 +47,22 @@
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+      <HintPath>$(NGUManaged)\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>$(NGUManaged)\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>$(NGUManaged)\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
+      <HintPath>$(NGUManaged)\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <HintPath>$(NGUManaged)\UnityEngine.JSONSerializeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\..\..\steam\steamapps\common\NGU IDLE\NGUIdle_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>$(NGUManaged)\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +97,7 @@
     <Compile Include="Managers\CombatManager.cs" />
     <Compile Include="Managers\DiggerManager.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Guide.cs" />
     <Compile Include="Managers\InventoryManager.cs" />
     <Compile Include="Loader.cs" />
     <Compile Include="Managers\LoadoutManager.cs" />
@@ -125,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="defaultZoneStats.json" />
+    <EmbeddedResource Include="Guide\**\*.json" />
     <None Include="inject.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

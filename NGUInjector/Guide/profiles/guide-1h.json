@@ -1,0 +1,15 @@
+{
+  "Breakpoints": {
+    "Comment": "Guide Ch1 (HSB -> T1): 1 hour rebirths to farm HSB and fight T1 (spawns 1h after rebirth). Add your own gear IDs (F5 dumps equipped gear to inject.log).",
+    "Energy": [
+      { "Time": 0, "Priorities": ["CAPALLBT", "BESTAUG"] }
+    ],
+    "Magic": [
+      { "Time": 0, "Priorities": ["BR"] }
+    ],
+    "Gear": [
+      { "Time": 0, "ID": [] }
+    ],
+    "RebirthTime": 3600
+  }
+}

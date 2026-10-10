@@ -1,0 +1,84 @@
+{
+  "Comment": "Progression guide shown in the overlay. Based on the community guide at https://sayolove.github.io/ngu-guide/en/ (goals are short paraphrases, read the linked chapter for details). A phase is finished when ALL 'Until' conditions are true; the first unfinished phase is shown. Conditions are 'field>=number' on the game's Character object, e.g. highestBoss, highestHardBoss (evil), highestSadisticBoss, adventure.titan1Kills, adventure.titan6V2Kills. Set AutoSwitchProfiles to true to let the injector load each phase's Profile (from the profiles folder) automatically. Leave Profile empty for phases you want to run with your own profiles. Delete this file to get the default back on next inject.",
+  "Enabled": true,
+  "AutoSwitchProfiles": false,
+  "Phases": [
+    {
+      "Name": "Ch1: Start -> Boss 58",
+      "Goal": "30m rebirths. Cap BT, run the most expensive augment you can finish, max each zone set, EXP into energy (P:C:B 1:37.5k:1).",
+      "Url": "https://sayolove.github.io/ngu-guide/en/chapters/chapter-1/",
+      "Until": ["highestBoss>=58"],
+      "Profile": "guide-30m"
+    },
+    {
+      "Name": "Ch1: HSB -> Titan 1",
+      "Goal": "1h rebirths. Farm the HSB set, climb ITOPOD for first-time PP, kill T1 (GRB) manually at ~1350 P/T.",
+      "Url": "https://sayolove.github.io/ngu-guide/en/chapters/chapter-1/",
+      "Until": ["adventure.titan1Kills>=1"],
+      "Profile": "guide-1h"
+    },
+    {
+      "Name": "Ch2: T1 -> Boss 100",
+      "Goal": "Farm T1 gear, level Time Machine + augment upgrades (Scissors, later Milk), rush zones to AVSP, harvest Yggdrasil fruits.",
+      "Url": "https://sayolove.github.io/ngu-guide/en/chapters/chapter-2/",
+      "Until": ["highestBoss>=100"],
+      "Profile": "guide-1h-tm"
+    },
+    {
+      "Name": "Ch2: Micro-CBlock -> Titan 4",
+      "Goal": "Start the T4 puzzle, do the Micro-CBlock (5 Basic + 1 24h challenge), then a long rebirth to kill T4 and farm Mega.",
+      "Url": "https://sayolove.github.io/ngu-guide/en/chapters/chapter-2/",
+      "Until": ["adventure.titan4Kills>=1"],
+      "Profile": ""
+    },
+    {
+      "Name": "Ch3: T4 -> Titan 6",
+      "Goal": "24h rebirths for beards: 1h TM, 1h AT, rest NGU Adv/DC, magic NGU Ygg. Mini-CBlock, Beardverse, T5, CBlock1, BDW/BAE, then LRB for T6.",
+      "Url": "https://sayolove.github.io/ngu-guide/en/chapters/chapter-3/",
+      "Until": ["adventure.titan6Kills>=1"],
+      "Profile": "guide-24h"
+    },
+    {
+      "Name": "Ch4: T6 -> Evil",
+      "Goal": "Stay until the T6 weapon drops, then 24h runs with E:M 3:1 and NGU Ygg/EXP. Manual major quests. CBlock2 after T6v2, then prep for Evil.",
+      "Url": "https://sayolove.github.io/ngu-guide/en/chapters/chapter-4/",
+      "Until": ["highestHardBoss>=1"],
+      "Profile": "guide-24h"
+    },
+    {
+      "Name": "Ch5: Evil -> Boss 125",
+      "Goal": "24h runs: TM, best augment, normal NGUs + AT, last hour evil NGUs. Snipe the EV exploder for digger gold. Boss 125 unlocks T7.",
+      "Url": "https://sayolove.github.io/ngu-guide/en/chapters/chapter-5/",
+      "Until": ["highestHardBoss>=125"],
+      "Profile": "guide-evil-24h"
+    },
+    {
+      "Name": "Ch5: T7 -> Titan 8",
+      "Goal": "One more hour of evil NGUs per T7 version. A/D hack until max evidence, CBlock3, then Adv hack. No R3 yet. LRB to T8.",
+      "Url": "https://sayolove.github.io/ngu-guide/en/chapters/chapter-5/",
+      "Until": ["adventure.titan8Kills>=1"],
+      "Profile": "guide-evil-24h"
+    },
+    {
+      "Name": "Ch6: T8 -> Titan 9",
+      "Goal": "Buy R3 only, daycare loadout, normal NGUs. Typo set -> CBlock4 -> Hack Day 1 -> Fad -> JRPG, then LRB to T9 starting with HD2.",
+      "Url": "https://sayolove.github.io/ngu-guide/en/chapters/chapter-6/",
+      "Until": ["adventure.titan9Kills>=1"],
+      "Profile": ""
+    },
+    {
+      "Name": "Ch7: T9 -> Sadistic",
+      "Goal": "24 manual T9 kills for AK, tag Adv/Hack/Wish cards, BEUC set -> BEUC CBlock + hack day, Rad LRB, boss 300, then Sadistic.",
+      "Url": "https://sayolove.github.io/ngu-guide/en/chapters/chapter-7/",
+      "Until": ["highestSadisticBoss>=1"],
+      "Profile": ""
+    },
+    {
+      "Name": "Ch8: Sadistic",
+      "Goal": "Entry CBlock, fertilizer + 23h rebirths with muffins, hack days / snug days, LRBs for T10-T12.",
+      "Url": "https://sayolove.github.io/ngu-guide/en/chapters/chapter-8/",
+      "Until": [],
+      "Profile": ""
+    }
+  ]
+}
